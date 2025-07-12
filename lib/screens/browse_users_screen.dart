@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../providers/theme_provider.dart';
 import '../providers/users_provider.dart';
 import '../providers/auth_provider.dart';
 import '../providers/swap_requests_provider.dart';
@@ -253,6 +254,65 @@ class _BrowseUsersScreenState extends State<BrowseUsersScreen> {
       appBar: AppBar(
         title: const Text('Discover Skills'),
         automaticallyImplyLeading: false,
+        actions: [
+          Consumer<ThemeProvider>(
+            builder: (context, themeProvider, child) {
+              return IconButton(
+                icon: Icon(
+                  themeProvider.isDarkMode ? Icons.light_mode : Icons.dark_mode,
+                ),
+                onPressed: () {
+                  themeProvider.toggleTheme();
+                },
+              );
+            },
+          ),
+          IconButton(
+              icon: const Icon(Icons.logout),
+              onPressed: () async {
+                final shouldLogout = await showDialog<bool>(
+                  context: context,
+                  builder: (context) => AlertDialog(
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                    title: Row(
+                      children: const [
+                        Icon(Icons.logout, color: Colors.red),
+                        SizedBox(width: 10),
+                        Text('Log out?'),
+                      ],
+                    ),
+                    content: const Text(
+                      'Are you sure you want to log out?',
+                      style: TextStyle(fontSize: 16),
+                    ),
+                    actionsPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                    actions: [
+                      OutlinedButton(
+                        onPressed: () => Navigator.of(context).pop(false),
+                        style: OutlinedButton.styleFrom(
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                        ),
+                        child: const Text('Cancel'),
+                      ),
+                      FilledButton(
+                        onPressed: () => Navigator.of(context).pop(true),
+                        style: FilledButton.styleFrom(
+                          backgroundColor: Colors.red,
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                        ),
+                        child: const Text('Logout'),
+                      ),
+                    ],
+                  ),
+                );
+
+                if (shouldLogout == true) {
+                  final authProvider = Provider.of<AuthProvider>(context, listen: false);
+                  await authProvider.logout();
+                }
+              }
+          )
+        ],
       ),
       body: Consumer2<UsersProvider, AuthProvider>(
         builder: (context, usersProvider, authProvider, child) {
