@@ -5,7 +5,6 @@ class User {
   final String photoUrl;
   final List<String> skillsOffered;
   final List<String> skillWanted;
-  final List<String> skills;
   final List<String> availability;
   final bool isPublic;
   final double rating;
@@ -15,9 +14,10 @@ class User {
   final String role;
   final String status;
   final List<dynamic> report;
-  final String profileImage;
-  final String bio;
   final int completedSwaps;
+  final String bio;
+  final String profileImage;
+  final List<String> skills;
 
   User({
     required this.id,
@@ -26,7 +26,6 @@ class User {
     required this.photoUrl,
     required this.skillsOffered,
     required this.skillWanted,
-    required this.skills,
     required this.availability,
     required this.isPublic,
     required this.rating,
@@ -39,6 +38,7 @@ class User {
     required this.profileImage,
     required this.bio,
     required this.completedSwaps,
+    required this.skills
   });
 
   factory User.fromJson(Map<String, dynamic> json) {
@@ -72,8 +72,8 @@ class User {
       'location': location,
       'photoUrl': photoUrl,
       'skillsOffered': skillsOffered,
-      'skills': skills,
       'skillWanted': skillWanted,
+      'skills':skills,
       'availability': availability,
       'isPublic': isPublic,
       'rating': rating,
@@ -88,4 +88,4 @@ class User {
       'completed_swaps': completedSwaps,
     };
   }
-} 
+}

@@ -175,7 +175,7 @@ class _UserOnboardingScreenState extends State<UserOnboardingScreen> {
                 // Profile Photo Section
                 GlassmorphicContainer(
                   width: double.infinity,
-                  height: 120,
+                  height: 240,
                   borderRadius: 20,
                   blur: 10,
                   linearGradient: LinearGradient(
@@ -228,7 +228,7 @@ class _UserOnboardingScreenState extends State<UserOnboardingScreen> {
                 // Location
                 GlassmorphicContainer(
                   width: double.infinity,
-                  height: 80,
+                  height: 140,
                   borderRadius: 20,
                   blur: 10,
                   linearGradient: LinearGradient(
@@ -280,7 +280,7 @@ class _UserOnboardingScreenState extends State<UserOnboardingScreen> {
                 // Skills
                 GlassmorphicContainer(
                   width: double.infinity,
-                  height: 120,
+                  height: 230,
                   borderRadius: 20,
                   blur: 10,
                   linearGradient: LinearGradient(
@@ -347,7 +347,7 @@ class _UserOnboardingScreenState extends State<UserOnboardingScreen> {
                 // Availability
                 GlassmorphicContainer(
                   width: double.infinity,
-                  height: 80,
+                  height: 180,
                   borderRadius: 20,
                   blur: 10,
                   linearGradient: LinearGradient(

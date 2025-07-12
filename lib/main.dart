@@ -107,15 +107,20 @@ class _AuthWrapperState extends State<AuthWrapper> {
 
     return Consumer<AuthProvider>(
       builder: (context, authProvider, child) {
-        final needsOnboarding = _needsOnboarding(authProvider);
-        if (authProvider.isAuthenticated) {
-          if (needsOnboarding) {
-            return const UserOnboardingScreen();
-          }
-          return const AdminPanelScreen();
-        } else {
-          return const AuthScreen();
-        }
+        return Consumer<AuthProvider>(
+          builder: (context, authProvider, child) {
+            if (authProvider.isAuthenticated) {
+              final user = authProvider.currentUser!;
+              if (user.role == 'admin') {
+                return const AdminPanelScreen();
+              } else {
+                return const UserOnboardingScreen();
+              }
+            } else {
+              return const AuthScreen();
+            }
+          },
+        );
       },
     );
   }
