@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:skill_swap_platform/screens/admin_panel_screen.dart';
 import 'screens/auth_screen.dart';
 import 'providers/auth_provider.dart';
 import 'providers/user_provider.dart';
@@ -111,7 +112,7 @@ class _AuthWrapperState extends State<AuthWrapper> {
           if (needsOnboarding) {
             return const UserOnboardingScreen();
           }
-          return const MainNavScreen();
+          return const AdminPanelScreen();
         } else {
           return const AuthScreen();
         }
