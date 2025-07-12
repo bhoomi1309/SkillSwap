@@ -81,7 +81,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
             // Profile Header
             GlassmorphicContainer(
               width: double.infinity,
-              height: 220,
+              height: 300,
               borderRadius: 20,
               blur: 10,
               linearGradient: LinearGradient(
@@ -267,7 +267,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
             if (widget.user.availability.isNotEmpty) ...[
               GlassmorphicContainer(
                 width: double.infinity,
-                height: 80,
+                height: 180,
                 borderRadius: 20,
                 blur: 10,
                 linearGradient: LinearGradient(
