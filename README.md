@@ -89,25 +89,6 @@ A comprehensive **Flutter application** that empowers users to exchange their sk
 - 🧱 **Flutter Widgets Used**:
   - `ListView`, `Card`, `TextFormField`, `Switch`, `DropdownButton`, `BottomNavigationBar`, `CircleAvatar`, `Chip`, etc.
 
----
-
-## 📁 Project Structure
-
-lib/
-├── main.dart
-├── providers/
-│ ├── auth_provider.dart
-│ ├── user_provider.dart
-│ └── swap_provider.dart
-└── screens/
-├── login_screen.dart
-├── dashboard_screen.dart
-├── browse_users_screen.dart
-├── swap_requests_screen.dart
-├── feedback_screen.dart
-└── admin_panel_screen.dart
-
-
 
 ---
 
