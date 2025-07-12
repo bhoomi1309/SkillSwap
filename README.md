@@ -132,22 +132,6 @@ lib/
 | `image_picker`         | Upload profile images          |
 | `cached_network_image` | Optimized image loading        |
 
----
-
-## 🧪 Mock Data & Scenarios
-
-### 👤 Users
-- John Doe – Web Dev, Design
-- Sarah Johnson – Cooking, Yoga
-- Emily Davis – Photography, French
-- Mike Chen – Guitar, Spanish
-- Alex Rodriguez – Soccer, Portuguese
-
-### 🔄 Swap Requests
-- Pending, completed, and rejected samples
-
-### ⭐ Feedback
-- Mock ratings and comments
 
 ---
 
@@ -162,7 +146,7 @@ lib/
 ### 🚀 Installation
 
 ```bash
-git clone https://github.com/ShreyaKeraliya/SkillSwap.git
+git clone https://github.com/bhoomi1309/SkillSwap.git
 cd SkillSwap
 flutter pub get
 flutter run
