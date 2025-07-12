@@ -246,8 +246,8 @@ class _SkillListingsTabState extends State<_SkillListingsTab> {
           color: Colors.red,
           onTap: () => _showSwapsDialog(
               context,
-              pendingSwaps,
-              'Pending Swaps',
+              declinedSwaps,
+              'Declined Swaps',
                   (id) async {
                 final url = Uri.parse('https://667323296ca902ae11b33da7.mockapi.io/swapRequests/$id');
                 final res = await http.delete(url);
